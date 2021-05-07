@@ -1,0 +1,53 @@
+#!/bin/bash
+
+# This is an auto-panelisation makefile. Uncomment the appropriate job and run
+# Requires docker and the image prepared by yaqwsx
+# https://github.com/yaqwsx/KiKit
+# docker run -it -v "$(pwd):/kikit" yaqwsx/kikit kikit/make
+
+# Panelise a 25.4mm square PCB in the 'standard panel'
+kikit panelize grid \
+--space 2.5 \
+--gridsize 6 10 \
+--tabwidth 12 \
+--htabs 0 \
+--vcuts \
+--radius 1 \
+--railsTb 10.025 \
+--fiducials 12.5 7.5 1.5 3 \
+--tooling 5 5 3 \
+kikit/PiicoDev-Ambient-Light-Sensor-VEML6030.kicad_pcb \
+kikit/panel.kicad_pcb
+
+
+# kikit panelize grid \
+# --space 3 \
+# --gridsize 2 2 \
+# --tabwidth 18 \
+# --tabheight 10 \
+# --vcuts \
+# --radius 1 kikit/KiPad.kicad_pcb kikit/panel.kicad_pcb
+
+
+# kikit panelize grid \
+# --space 3 \
+# --gridsize 2 2 \
+# --tabwidth 5 \
+# --tabheight 10 \
+# --vcuts \
+# --radius 1 \
+# --panelsize 300 300 \
+# --copperfill kikit/KiPad.kicad_pcb kikit/output/panel.kicad_pcb
+
+# In work. Panelise with tooling strips
+# kikit panelize grid \
+# --space 3 \
+# --gridsize 2 2 \
+# --tabwidth 5 \
+# --tabheight 5 \
+# --mousebites 0.5 1 0 \
+# --radius 1 \
+# --panelsize 300 400 \
+# --framecutH \
+# --fiducials 10 2.5 1 2 \
+# --tooling 5 2.5 1.5 kikit/KiPad.kicad_pcb kikit/panel.kicad_pcb
