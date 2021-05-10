@@ -110,8 +110,8 @@ L Device:LED D1
 U 1 1 5F913C84
 P 2200 4100
 F 0 "D1" V 2239 3982 50  0000 R CNN
-F 1 "LED" V 2148 3982 50  0000 R CNN
-F 2 "LED_SMD:LED_0603_1608Metric" H 2200 4100 50  0001 C CNN
+F 1 "LED 5000K" V 2148 3982 50  0000 R CNN
+F 2 "CoreElectronics_Components:LED_1208_3020Metric_Heatsink" H 2200 4100 50  0001 C CNN
 F 3 "~" H 2200 4100 50  0001 C CNN
 	1    2200 4100
 	0    -1   -1   0   
@@ -119,16 +119,14 @@ $EndComp
 $Comp
 L power:GND #PWR0105
 U 1 1 5F914478
-P 2200 4300
-F 0 "#PWR0105" H 2200 4050 50  0001 C CNN
-F 1 "GND" H 2205 4127 50  0000 C CNN
-F 2 "" H 2200 4300 50  0001 C CNN
-F 3 "" H 2200 4300 50  0001 C CNN
-	1    2200 4300
+P 2200 4800
+F 0 "#PWR0105" H 2200 4550 50  0001 C CNN
+F 1 "GND" H 2205 4627 50  0000 C CNN
+F 2 "" H 2200 4800 50  0001 C CNN
+F 3 "" H 2200 4800 50  0001 C CNN
+	1    2200 4800
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2200 4300 2200 4250
 $Comp
 L power:+3V3 #PWR0106
 U 1 1 5F914ABC
@@ -158,7 +156,7 @@ L Device:R R1
 U 1 1 5F915BCC
 P 2200 3750
 F 0 "R1" H 2270 3796 50  0000 L CNN
-F 1 "1k" H 2270 3705 50  0000 L CNN
+F 1 "68R" H 2270 3705 50  0000 L CNN
 F 2 "Resistor_SMD:R_0402_1005Metric" V 2130 3750 50  0001 C CNN
 F 3 "~" H 2200 3750 50  0001 C CNN
 	1    2200 3750
@@ -168,8 +166,6 @@ Wire Wire Line
 	2200 3600 2200 3550
 Wire Wire Line
 	2200 3950 2200 3900
-Text Notes 1450 3450 0    50   ~ 0
-Clear jumper \nto disable LED
 Text Notes 2100 1100 0    50   ~ 0
 Clear jumper \nto remove I2C pullup
 $Comp
@@ -515,4 +511,58 @@ F 3 "https://www.vishay.com/docs/84276/veml6040.pdf" H 4850 3750 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	5250 3650 5300 3650
+$Comp
+L Transistor_FET:BSS138 Q1
+U 1 1 6098B4D7
+P 2100 4550
+F 0 "Q1" H 2304 4596 50  0000 L CNN
+F 1 "BSS138" H 2304 4505 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 2300 4475 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF" H 2100 4550 50  0001 L CNN
+	1    2100 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2200 4250 2200 4350
+Wire Wire Line
+	2200 4750 2200 4800
+$Comp
+L Connector:Conn_01x01_Male J4
+U 1 1 609966CF
+P 3900 6600
+F 0 "J4" H 4008 6781 50  0000 C CNN
+F 1 "Conn_01x01_Male" H 4008 6690 50  0000 C CNN
+F 2 "CoreElectronics_Components:PiicoDev_header_1pin_LED" H 3900 6600 50  0001 C CNN
+F 3 "~" H 3900 6600 50  0001 C CNN
+	1    3900 6600
+	1    0    0    -1  
+$EndComp
+Connection ~ 2200 3250
+Text Notes 1550 3500 0    50   ~ 0
+Clear jumper \nto disable LED
+$Comp
+L Device:R R2
+U 1 1 6098F966
+P 1500 4150
+F 0 "R2" H 1430 4104 50  0000 R CNN
+F 1 "10k" H 1430 4195 50  0000 R CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 1430 4150 50  0001 C CNN
+F 3 "~" H 1500 4150 50  0001 C CNN
+	1    1500 4150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1900 4550 1500 4550
+Wire Wire Line
+	1500 4550 1500 4300
+Wire Wire Line
+	1500 4000 1500 3250
+Wire Wire Line
+	1500 3250 2200 3250
+Text Label 1500 4550 0    50   ~ 0
+LED_EN
+Wire Wire Line
+	4100 6600 4300 6600
+Text Label 4300 6600 0    50   ~ 0
+LED_EN
 $EndSCHEMATC
