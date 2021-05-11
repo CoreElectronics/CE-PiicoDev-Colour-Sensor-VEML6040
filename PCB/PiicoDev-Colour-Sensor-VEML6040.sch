@@ -5,13 +5,13 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "PiicoDev Colour Sensor VEML6040"
-Date "2021-04-27"
-Rev "0"
+Date "2021-05-11"
+Rev "01"
 Comp "Core Electronics"
 Comment1 "Designed at Core Electronics by Peter Johnston"
 Comment2 "PiicoDev and the PiicoDev logo are trademarks of Core Electronics Pty Ltd."
 Comment3 "License: CCASAv4.0 http://creativecommons.org/licenses/by-sa/4.0"
-Comment4 "based off: https://github.com/CoreElectronics/CE-PiicoDev-Ambient-Light-Sensor-VEML6030"
+Comment4 ""
 $EndDescr
 Text Label 2700 2150 0    50   ~ 0
 SDA
