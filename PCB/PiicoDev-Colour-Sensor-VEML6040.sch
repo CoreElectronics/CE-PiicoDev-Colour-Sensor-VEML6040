@@ -565,4 +565,6 @@ Wire Wire Line
 	4100 6600 4300 6600
 Text Label 4300 6600 0    50   ~ 0
 LED_EN
+Text Notes 2450 3800 0    50   ~ 0
+68 Ohms draws 8.4 mA
 $EndSCHEMATC
