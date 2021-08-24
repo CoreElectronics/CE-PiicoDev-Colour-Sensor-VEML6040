@@ -130,40 +130,36 @@ $EndComp
 $Comp
 L power:+3V3 #PWR0106
 U 1 1 5F914ABC
-P 2200 3200
-F 0 "#PWR0106" H 2200 3050 50  0001 C CNN
-F 1 "+3V3" H 2215 3373 50  0000 C CNN
-F 2 "" H 2200 3200 50  0001 C CNN
-F 3 "" H 2200 3200 50  0001 C CNN
-	1    2200 3200
+P 2200 3050
+F 0 "#PWR0106" H 2200 2900 50  0001 C CNN
+F 1 "+3V3" H 2215 3223 50  0000 C CNN
+F 2 "" H 2200 3050 50  0001 C CNN
+F 3 "" H 2200 3050 50  0001 C CNN
+	1    2200 3050
 	1    0    0    -1  
 $EndComp
 $Comp
 L Jumper:SolderJumper_2_Bridged JP1
 U 1 1 5F9150B4
-P 2200 3400
-F 0 "JP1" V 2154 3468 50  0000 L CNN
-F 1 "LED" V 2245 3468 50  0000 L CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 2200 3400 50  0001 C CNN
-F 3 "~" H 2200 3400 50  0001 C CNN
-	1    2200 3400
+P 2200 3300
+F 0 "JP1" V 2154 3368 50  0000 L CNN
+F 1 "LED" V 2245 3368 50  0000 L CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 2200 3300 50  0001 C CNN
+F 3 "~" H 2200 3300 50  0001 C CNN
+	1    2200 3300
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	2200 3250 2200 3200
 $Comp
 L Device:R R1
 U 1 1 5F915BCC
-P 2200 3750
-F 0 "R1" H 2270 3796 50  0000 L CNN
-F 1 "68R" H 2270 3705 50  0000 L CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 2130 3750 50  0001 C CNN
-F 3 "~" H 2200 3750 50  0001 C CNN
-	1    2200 3750
+P 2200 3700
+F 0 "R1" H 2270 3746 50  0000 L CNN
+F 1 "68R" H 2270 3655 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 2130 3700 50  0001 C CNN
+F 3 "~" H 2200 3700 50  0001 C CNN
+	1    2200 3700
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2200 3600 2200 3550
 Wire Wire Line
 	2200 3950 2200 3900
 Text Notes 2100 1100 0    50   ~ 0
@@ -523,7 +519,7 @@ F 3 "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF" H 2100 4550 50  0001 L 
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2200 4250 2200 4350
+	2200 4250 2200 4300
 Wire Wire Line
 	2200 4750 2200 4800
 $Comp
@@ -537,7 +533,6 @@ F 3 "~" H 3900 6600 50  0001 C CNN
 	1    3900 6600
 	1    0    0    -1  
 $EndComp
-Connection ~ 2200 3250
 Text Notes 1550 3500 0    50   ~ 0
 Clear jumper \nto disable LED
 $Comp
@@ -545,7 +540,7 @@ L Device:R R2
 U 1 1 6098F966
 P 1500 4150
 F 0 "R2" H 1430 4104 50  0000 R CNN
-F 1 "10k" H 1430 4195 50  0000 R CNN
+F 1 "4.7k" H 1430 4195 50  0000 R CNN
 F 2 "Resistor_SMD:R_0402_1005Metric" V 1430 4150 50  0001 C CNN
 F 3 "~" H 1500 4150 50  0001 C CNN
 	1    1500 4150
@@ -555,10 +550,6 @@ Wire Wire Line
 	1900 4550 1500 4550
 Wire Wire Line
 	1500 4550 1500 4300
-Wire Wire Line
-	1500 4000 1500 3250
-Wire Wire Line
-	1500 3250 2200 3250
 Text Label 1500 4550 0    50   ~ 0
 LED_EN
 Wire Wire Line
@@ -567,4 +558,42 @@ Text Label 4300 6600 0    50   ~ 0
 LED_EN
 Text Notes 2450 3800 0    50   ~ 0
 68 Ohms draws 8.4 mA
+$Comp
+L Device:R R5
+U 1 1 6124B54E
+P 2850 4100
+F 0 "R5" H 2780 4054 50  0000 R CNN
+F 1 "4.7k" H 2780 4145 50  0000 R CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 2780 4100 50  0001 C CNN
+F 3 "~" H 2850 4100 50  0001 C CNN
+	1    2850 4100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2200 4300 2850 4300
+Wire Wire Line
+	2850 4300 2850 4250
+Connection ~ 2200 4300
+Wire Wire Line
+	2200 4300 2200 4350
+Wire Wire Line
+	2850 3950 2850 3900
+Wire Wire Line
+	2850 3900 2200 3900
+Connection ~ 2200 3900
+Wire Wire Line
+	2200 3850 2200 3900
+Wire Wire Line
+	2200 3550 2200 3450
+Wire Wire Line
+	2200 3050 2200 3100
+Wire Wire Line
+	2200 3100 1500 3100
+Wire Wire Line
+	1500 3100 1500 4000
+Connection ~ 2200 3100
+Wire Wire Line
+	2200 3100 2200 3150
+Text Notes 2900 4400 0    50   ~ 0
+load for FET I_DSS\nswitch LED full off
 $EndSCHEMATC
